@@ -23,7 +23,7 @@ gulp.task('build-css', function() {
     return gulp.src('source/scss/*.scss')
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('public/assets/stylesheets'))
 });
 
