@@ -1,9 +1,0 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Courier New, Courier, monospace;
-  color: black;
-  background: gray;
-  box-shadow: 2px solid gray;
-  -webkit-transition: all linear ease;
-  transition: all linear ease; }

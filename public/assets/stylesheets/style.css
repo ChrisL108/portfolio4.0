@@ -1,0 +1,20 @@
+#footer {
+  border-width: 1px;
+  border-color: #ccc;
+  border-style: solid; }
+
+.box {
+  border: 3px solid #777;
+  border-radius: 0.5em; }
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all linear ease;
+  transition: all linear ease;
+  background: -webkit-linear-gradient(black, blue);
+  background: linear-gradient(black, blue); }
+
+html {
+  font-size: 20pxx; }
