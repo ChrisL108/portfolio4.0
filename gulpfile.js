@@ -2,12 +2,14 @@
 
 /* File: gulpfile.js */
 
-// grab our packages
+// Required
 var gulp   = require('gulp'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
     autoprefixer = require('gulp-autoprefixer');
 
 // add default watch tasks
@@ -22,8 +24,9 @@ gulp.task('build-js', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(uglify())
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('public/js'))
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('public/assets/js'))
+    .pipe(reload({stream: true}));
 });
 
 // BUILD CSS
@@ -32,11 +35,21 @@ gulp.task('build-js', function() {
 // ~then concat into styles.css
 gulp.task('build-css', function () {
   return gulp.src('./source/scss/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'})
-        .on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError)) //sass({outputStyle: 'compressed'})
     .pipe(autoprefixer())
-    .pipe(concat('styles.css'))
-    .pipe(gulp.dest('public/assets/stylesheets'));
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('public/assets/stylesheets'))
+    .pipe(reload({stream: true}));
+});
+
+
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: './public/'
+        }
+    });
 });
  
 
@@ -44,4 +57,5 @@ gulp.task('build-css', function () {
 gulp.task('watch', function() {
   gulp.watch('source/js/**/*.js', ['build-js']);
   gulp.watch('source/scss/**/*.scss', ['build-css']);
+  gulp.watch('source/*.html').on('change', browserSync.reload);
 });
