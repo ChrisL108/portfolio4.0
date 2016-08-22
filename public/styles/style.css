@@ -1,45 +1,145 @@
-html, body {
-  margin: 0;
-  padding: 0; }
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
 
 body {
-  font-size: 18px;
-  background: linear-gradient(gray, cadetblue); }
+  margin: 0;
+  height: 100%;
+  font-size: 16px; }
 
 #jumbotron {
-  border: 2px solid blue;
-  width: 100vw;
+  position: relative;
+  perspective: 1px;
   height: 100vh;
-  background-size: cover;
-  display: -ms-flexbox;
-  display: flex; }
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%; }
+  #jumbotron .slide {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+  #jumbotron .inner {
+    background: linear-gradient(rgba(115, 115, 115, 0.9), #444444);
+    border: 4px inset #868686;
+    padding: 2rem;
+    transform: translateZ(0); }
+  #jumbotron #title-wrapper {
+    transform: translateY(-100px);
+    opacity: 0;
+    border: 2px solid white;
+    box-shadow: 4px 4px 17px black;
+    margin: 30vh auto 0;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    max-width: 31em;
+    height: auto;
+    animation: slide 1s linear 3.2s;
+    animation-fill-mode: forwards; }
+    #jumbotron #title-wrapper h1 {
+      margin: 0;
+      color: blue;
+      line-height: 1;
+      letter-spacing: 2px;
+      font-size: 2em;
+      text-align: center;
+      animation: flash 0.5s linear 4.4s; }
+
+@keyframes flash {
+  from, to {
+    transform: translate3d(0, 0, 0); }
+  10%, 30%, 90% {
+    opacity: 1;
+    text-shadow: 2px 2px 1px blue;
+    transform: translate3d(-10px, 0, 0);
+    color: white; }
+  25%, 75% {
+    opacity: 0;
+    text-shadow: none;
+    transform: translate3d(10px, 5px, 0);
+    text-shadow: -2px -2px 1px white;
+    color: greenyellow; } }
+      #jumbotron #title-wrapper h1 span {
+        font-size: 1.7em;
+        color: #092054;
+        display: block;
+        border-bottom: 2px solid #092054; }
   #jumbotron #overlay {
     width: 60%;
-    height: 100vh;
-    background: cadetblue;
-    -ms-flex-pack: start;
-        justify-content: flex-start;
-    border: 20vw solid gray;
-    opacity: 0.6; }
-  #jumbotron #title-wrapper {
-    border: 1px solid green;
-    position: absolute;
-    opacity: 0.6; }
+    position: fixed;
+    left: -60%;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    border-top-color: rgba(0, 22, 37, 0.9);
+    border-right: 20vw solid transparent;
+    border-top-width: 100vh;
+    border-top-style: solid;
+    animation: move 1.5s ease-in-out 1.5s;
+    animation-fill-mode: forwards; }
+
+@keyframes move {
+  0% {
+    left: -60%;
+    width: 20%;
+    border-right: 30vw solid transparent; }
+  50% {
+    left: 0;
+    width: 60%;
+    border-right: -50vw solid transparent; }
+  100% {
+    left: 0;
+    width: 60%;
+    border-right: 20vw solid transparent; } }
   #jumbotron #bg {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
-    animation: scale 10s 4.2s;
+    scroll-behavior: smooth;
+    animation: scale 10s 3.2s;
     animation-fill-mode: forwards; }
 
 @keyframes scale {
   from {
     transform: scale(1); }
   to {
-    transform: scale(1.1); } }
+    transform: rotate(5deg) scale(1.1); } }
+    @media screen and (min-width: 920px) {
+      #jumbotron #bg {
+        min-width: 100%; } }
+  #jumbotron .bgwidth {
+    width: 100%; }
+  #jumbotron .bgheight {
+    height: 100%; }
 
 @keyframes slide {
   100% {
     opacity: 1;
     transform: translateX(0); } }
+
+@keyframes flash {
+  from, to {
+    transform: translate3d(0, 0, 0); }
+  10%, 30%, 90% {
+    opacity: 1;
+    text-shadow: 2px 8px 1px;
+    transform: translate3d(-10px, 0, 0);
+    color: white; }
+  25%, 75% {
+    opacity: 0;
+    text-shadow: none;
+    transform: translate3d(10px, 5px, 0);
+    color: greenyellow; } }
+
+#about {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: gray;
+  width: 100%;
+  height: 400px;
+  z-index: 5; }

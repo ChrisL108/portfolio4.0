@@ -1,12 +1,16 @@
-html, body {
-    margin: 0;
-    padding:0;
-}
-body {
-    font-size: 18px;
-    background: linear-gradient(gray, cadetblue);
-}
 
+* {
+  box-sizing: border-box; 
+}
+html {height: 100%;}
+body {
+  margin: 0;
+  height: 100%;
+  font-size: 16px;
+}
 // import - _JUMBOTRON
 @import 'jumbotron'; 
+
+// import - _ABOUT
+@import 'about'; 
 
