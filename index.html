@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>webNinja.init()</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="public/assets/stylesheets/style.css">
+  <link rel="stylesheet" href="public/styles/style.css">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -18,12 +18,16 @@
 <body>
 
     <div id="jumbotron">
-        <h1>Inside the jumbotron</h1>
-        <small>Extra-adding some stuff</small>
+        <div id="overlay">Overlay</div>
+        <div id="title-wrapper">
+          <h2>Chris LaCaille</h2>
+        </div>
+        <img id="bg" src="public/img/mountains.jpg" alt="mountain view">
     </div>
 
 
-
-  <script src="public/assets/js/bundle.js"></script>
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="public/js/bundle.js"></script>
 </body>
 </html>

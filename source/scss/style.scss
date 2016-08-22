@@ -3,11 +3,10 @@ html, body {
     padding:0;
 }
 body {
-    display: flex;
-    font-size: 50px;
+    font-size: 18px;
     background: linear-gradient(gray, cadetblue);
 }
 
-// JUMBOTRON 
+// import - _JUMBOTRON
 @import 'jumbotron'; 
 

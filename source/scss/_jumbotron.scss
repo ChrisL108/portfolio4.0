@@ -1,7 +1,50 @@
 #jumbotron {
   border: 2px solid blue;
-  color: green;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
+  // background: url(../img/mountains.jpg);
+  background-size: cover;
+  display: flex;
+  // flex-direction: row;
+
+  #overlay {
+    // position: relative;
+    // left:0;
+    width:60%;
+    height: 100vh;
+    background: cadetblue;
+    justify-content: flex-start;
+    border: 20vw solid gray;
+    opacity: 0.6;  }
+
+  #title-wrapper {
+    border: 1px solid green;
+    position: absolute;
+    opacity: 0.6; }
+    
+  #bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: -1;
+    animation: scale 10s 4.2s;
+    animation-fill-mode: forwards; }
+}
+
+
+
+
+@keyframes scale {
+  from {
+    transform: scale(1); 
+  }
+  to {
+    transform: scale(1.1); 
+  } 
+}
+@keyframes slide {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

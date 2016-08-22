@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 18px;
+  background: linear-gradient(gray, cadetblue); }
+
+#jumbotron {
+  border: 2px solid blue;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex; }
+  #jumbotron #overlay {
+    width: 60%;
+    height: 100vh;
+    background: cadetblue;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    border: 20vw solid gray;
+    opacity: 0.6; }
+  #jumbotron #title-wrapper {
+    border: 1px solid green;
+    position: absolute;
+    opacity: 0.6; }
+  #jumbotron #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: scale 10s 4.2s;
+    animation-fill-mode: forwards; }
+
+@keyframes scale {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.1); } }
+
+@keyframes slide {
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }

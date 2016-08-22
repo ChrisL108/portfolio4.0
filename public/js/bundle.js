@@ -1,2 +1,4 @@
+"use strict";
+
 var jumbotron = document.getElementById("jumbotron");
-let j = 'JUMBOTRON';
+var j = 'JUMBOTRON';
