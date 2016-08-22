@@ -68,7 +68,7 @@ gulp.task('sync', function() {
 
 // COMPRESS IMAGES - task
 gulp.task('imagemin', function() {
-    gulp.src('source/img/*')
+    gulp.src('public/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('public/img'));
 });
@@ -83,5 +83,5 @@ gulp.task('watch', function() {
     // watch scss
     gulp.watch('source/scss/**/*.scss', ['build-css']);
     // watch images
-    gulp.watch('source/img/*', ['imagemin']);
+    gulp.watch('public/img/*', ['imagemin']);
 });
