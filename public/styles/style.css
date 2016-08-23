@@ -7,80 +7,73 @@ html {
 body {
   margin: 0;
   height: 100%;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; }
+  @media (max-width: 720px) {
+    body {
+      font-size: 0.8rem; } }
 
 #jumbotron {
   position: relative;
-  perspective: 1px;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 100%; }
-  #jumbotron .slide {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg") center center no-repeat;
+  background-size: cover; }
+  #jumbotron #slide {
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%; }
-  #jumbotron .inner {
-    background: linear-gradient(rgba(115, 115, 115, 0.9), #444444);
-    border: 4px inset #868686;
-    padding: 2rem;
-    transform: translateZ(0); }
-  #jumbotron #title-wrapper {
-    transform: translateY(-100px);
-    opacity: 0;
-    border: 2px solid white;
-    box-shadow: 4px 4px 17px black;
-    margin: 30vh auto 0;
-    padding: 10px;
-    position: relative;
-    z-index: 2;
-    max-width: 31em;
-    height: auto;
-    animation: slide 1s linear 3.2s;
-    animation-fill-mode: forwards; }
-    #jumbotron #title-wrapper h1 {
-      margin: 0;
-      color: blue;
-      line-height: 1;
-      letter-spacing: 2px;
-      font-size: 2em;
-      text-align: center;
-      animation: flash 0.5s linear 4.4s; }
-
-@keyframes flash {
-  from, to {
-    transform: translate3d(0, 0, 0); }
-  10%, 30%, 90% {
-    opacity: 1;
-    text-shadow: 2px 2px 1px blue;
-    transform: translate3d(-10px, 0, 0);
-    color: white; }
-  25%, 75% {
-    opacity: 0;
-    text-shadow: none;
-    transform: translate3d(10px, 5px, 0);
-    text-shadow: -2px -2px 1px white;
-    color: greenyellow; } }
-      #jumbotron #title-wrapper h1 span {
-        font-size: 1.7em;
-        color: #092054;
-        display: block;
-        border-bottom: 2px solid #092054; }
-  #jumbotron #overlay {
-    width: 60%;
-    position: fixed;
-    left: -60%;
-    z-index: 1;
-    height: 100%;
-    top: 0;
-    border-top-color: rgba(0, 22, 37, 0.9);
-    border-right: 20vw solid transparent;
-    border-top-width: 100vh;
-    border-top-style: solid;
-    animation: move 1.5s ease-in-out 1.5s;
-    animation-fill-mode: forwards; }
+    #jumbotron #slide .inner {
+      background: linear-gradient(rgba(115, 115, 115, 0.9), #444444);
+      border: 4px inset #868686;
+      padding: 2rem;
+      transform: translateZ(0); }
+    #jumbotron #slide #title-wrapper {
+      transform: translateY(-100px);
+      opacity: 0;
+      border: 2px solid white;
+      box-shadow: 4px 4px 17px black;
+      margin: 30vh auto 0;
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      max-width: 31em;
+      height: auto;
+      animation: slide 1s linear 3.2s;
+      animation-fill-mode: forwards; }
+      #jumbotron #slide #title-wrapper h1 {
+        margin: 0;
+        color: #c6c6c6;
+        line-height: 1;
+        letter-spacing: 2px;
+        font-size: 2em;
+        text-align: center;
+        animation: flash 0.5s linear 4.4s; }
+        #jumbotron #slide #title-wrapper h1 span {
+          font-size: 1.7em;
+          color: #092054;
+          display: block;
+          border-bottom: 2px solid #092054; }
+    #jumbotron #slide #overlay {
+      width: 60%;
+      position: fixed;
+      left: -60%;
+      z-index: 1;
+      height: 100%;
+      top: 0;
+      border-top-color: rgba(0, 22, 37, 0.9);
+      border-right: 20vw solid transparent;
+      border-top-width: 100vh;
+      border-top-style: solid;
+      animation: move 1.5s ease-in-out 1.5s;
+      animation-fill-mode: forwards; }
 
 @keyframes move {
   0% {
@@ -96,21 +89,17 @@ body {
     width: 60%;
     border-right: 20vw solid transparent; } }
   #jumbotron #bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    scroll-behavior: smooth;
-    animation: scale 10s 3.2s;
-    animation-fill-mode: forwards; }
-
-@keyframes scale {
-  from {
-    transform: scale(1); }
-  to {
-    transform: rotate(5deg) scale(1.1); } }
-    @media screen and (min-width: 920px) {
-      #jumbotron #bg {
-        min-width: 100%; } }
+    position: absolute;
+    overflow: hidden;
+    top: -10%;
+    left: -10%;
+    transform: translate3d(0, 0, 0) rotate(0.01deg);
+    width: 120%;
+    height: 120%;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png") center center no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    animation: smokebg 60s infinite alternate; }
   #jumbotron .bgwidth {
     width: 100%; }
   #jumbotron .bgheight {
@@ -122,18 +111,32 @@ body {
     transform: translateX(0); } }
 
 @keyframes flash {
-  from, to {
+  from,
+  to {
     transform: translate3d(0, 0, 0); }
-  10%, 30%, 90% {
+  10%,
+  30%,
+  90% {
     opacity: 1;
     text-shadow: 2px 8px 1px;
-    transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-20px, -10px, 0);
     color: white; }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
     text-shadow: none;
-    transform: translate3d(10px, 5px, 0);
+    transform: translate3d(30px, -15px, 0);
     color: greenyellow; } }
+
+@keyframes smokebg {
+  25% {
+    transform: translate3d(100px, 0, 0) rotate(0.01deg); }
+  50% {
+    transform: translate3d(75px, -25px, 0) rotate(0.01deg); }
+  75% {
+    transform: translate3d(45px, 30px, 0) rotate(0.01deg); }
+  100% {
+    transform: translate3d(25px, -15px, 0) rotate(0.01deg); } }
 
 #about {
   margin: 0;

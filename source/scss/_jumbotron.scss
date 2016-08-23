@@ -1,138 +1,134 @@
 #jumbotron {
+  // position: relative;
+  // // perspective: 1px;
+  // height: 90vh;
+  // overflow: hidden;
+  // // overflow-y: auto;
+  // width: 100%;
   position: relative;
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
-  .slide {
+      overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw; height: 100vh;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg') center center no-repeat;
+  background-size: cover;
+  #slide {
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100%
-  }
-  .inner {
-    background: linear-gradient(rgba(115, 115, 115, 0.9), #444444);
-    border: 4px inset #868686;
-    padding: 2rem;
-    transform: translateZ(0);
-  }
-  #title-wrapper {
-    transform: translateY(-100px);
-    opacity: 0;
-    border: 2px solid white;
-    box-shadow: 4px 4px 17px black;
-    margin: 30vh auto 0;
-    padding: 10px;
-    position: relative;
-    z-index: 2;
-    max-width: 31em;
-    height: auto; 
-    animation: slide 1s linear 3.2s;
-    animation-fill-mode: forwards; 
-    h1 {
-      margin: 0;
-      color: blue;
-      line-height: 1;
-      letter-spacing: 2px;
-      font-size: 2em; 
-      text-align: center;
-      animation: flash 0.5s linear 4.4s;
-      @keyframes flash {
-          from, to {
-            transform: translate3d(0, 0, 0);
-          }
-          10%, 30%, 90% {
-            opacity: 1;
-            text-shadow: 2px 2px 1px blue;
-            transform: translate3d(-10px, 0, 0);
-            color: white;
-          }
-
-          25%, 75% {
-            opacity: 0;
-            text-shadow: none;
-            transform: translate3d(10px, 5px, 0);
-            text-shadow: -2px -2px 1px white;
-            color: greenyellow;
-          }
-        }
-      span {
-          font-size: 1.7em; 
+    width: 100%;
+    .inner {
+      background: linear-gradient(rgba(115, 115, 115, 0.9), #444444);
+      border: 4px inset #868686;
+      padding: 2rem;
+      transform: translateZ(0);
+    }
+    #title-wrapper {
+      transform: translateY(-100px);
+      opacity: 0;
+      border: 2px solid white;
+      box-shadow: 4px 4px 17px black;
+      margin: 30vh auto 0;
+      padding: 10px;
+      position: relative;
+      z-index: 2;
+      max-width: 31em;
+      height: auto;
+      animation: slide 1s linear 3.2s;
+      animation-fill-mode: forwards;
+      h1 {
+        margin: 0;
+        color: #c6c6c6;
+        line-height: 1;
+        letter-spacing: 2px;
+        font-size: 2em;
+        text-align: center;
+        animation: flash 0.5s linear 4.4s;
+       
+        span {
+          font-size: 1.7em;
           color: #092054;
-          display: block; 
+          display: block;
           border-bottom: 2px solid #092054;
         }
       }
     } // ~~ #title-wrapper ~~
     #overlay {
-    width: 60%;
-    // opacity: 0.9;
-    position: fixed;
-    left: -60%;
-    z-index: 1;
-    height: 100%;
-    top: 0;
-    border-top-color:rgba(0, 22, 37, 0.9);
-    border-right: 20vw solid transparent;
-    border-top-width: 100vh;
-    border-top-style: solid;
-    animation: move 1.5s ease-in-out 1.5s; 
-    animation-fill-mode: forwards; 
-    @keyframes move {
+      width: 60%;
+      // opacity: 0.9;
+      position: fixed;
+      left: -60%;
+      z-index: 1;
+      height: 100%;
+      top: 0;
+      border-top-color: rgba(0, 22, 37, 0.9);
+      border-right: 20vw solid transparent;
+      border-top-width: 100vh;
+      border-top-style: solid;
+      animation: move 1.5s ease-in-out 1.5s;
+      animation-fill-mode: forwards;
+      @keyframes move {
         0% {
           left: -60%;
           width: 20%;
-          border-right: 30vw solid transparent; 
+          border-right: 30vw solid transparent;
         }
         50% {
           left: 0;
           width: 60%;
-          border-right: -50vw solid transparent; 
+          border-right: -50vw solid transparent;
         }
         100% {
           left: 0;
           width: 60%;
-          border-right: 20vw solid transparent; 
-        } 
-      }
-  }
-    
-  // jumbotron background image
-  #bg {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    scroll-behavior: smooth;
-    
-    animation: scale 10s 3.2s;
-    animation-fill-mode: forwards;
-      @keyframes scale {
-        from {
-          transform: scale(1); 
+          border-right: 20vw solid transparent;
         }
-        to {
-          transform:rotate(5deg) scale(1.1); 
-          
-        } 
       }
-    @media screen and (min-width: 920px) {
-      min-width: 100%;
     }
   }
-  .bgwidth { 
-    width: 100%; 
+  // jumbotron background image
+  #bg {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // scroll-behavior: smooth;
+    // animation: scale 10s 3.2s;
+    // animation-fill-mode: forwards;
+    // @keyframes scale {
+    //   from {
+    //     transform: scale(1);
+    //   }
+    //   to {
+    //     transform: rotate(5deg) scale(1.1);
+    //     -webkit-filter: contrast(200%);
+    //   }
+    // }
+    // @media screen and (min-width: 920px) {
+    //   min-width: 100%;
+    // }
+    position: absolute;
+    overflow: hidden;
+    top: -10%;
+    left: -10%;
+    transform: translate3d(0, 0, 0) rotate(0.01deg);
+    width: 120%;
+    height: 120%;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png') center center no-repeat;
+    background-size: cover;
+    // z-index: 2;
+    opacity: 0.5;
+    animation: smokebg 60s infinite alternate;
   }
-  .bgheight { 
-    height: 100%; 
+  .bgwidth {
+    width: 100%;
   }
-
- } // #jumbotron
-
-
-
-
+  .bgheight {
+    height: 100%;
+  }
+} // #jumbotron
 // Slide animation
 @keyframes slide {
   100% {
@@ -140,22 +136,41 @@
     transform: translateX(0);
   }
 }
+
 // Flashing animation
 @keyframes flash {
-  from, to {
+  from,
+  to {
     transform: translate3d(0, 0, 0);
   }
-  10%, 30%, 90% {
+  10%,
+  30%,
+  90% {
     opacity: 1;
     text-shadow: 2px 8px 1px;
-    transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-20px, -10px, 0);
     color: white;
   }
-
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
     text-shadow: none;
-    transform: translate3d(10px, 5px, 0);
+    transform: translate3d(30px, -15px, 0);
     color: greenyellow;
+  }
+}
+
+@keyframes smokebg {
+  25% {
+    transform: translate3d(100px, 0, 0) rotate(0.01deg)
+  }
+  50% {
+    transform: translate3d(75px, -25px, 0) rotate(0.01deg)
+  }
+  75% {
+    transform: translate3d(45px, 30px, 0) rotate(0.01deg)
+  }
+  100% {
+    transform: translate3d(25px, -15px, 0) rotate(0.01deg)
   }
 }
